@@ -46,8 +46,6 @@ class test_Reverse_Proxy__Http_Bin(TestCase):
                    'aaaa'         : 'bbbb'                             }
         response = self.rp_http_bin.request_post(f'/post?{query_string}', post_data=post_data, headers=headers)
 
-        pprint(response)
-        return
         assert list_contains_list(list_set(response.get('headers')), ['Connection', 'Content-Length', 'Content-Type', 'Date', 'Server'] )
         assert list_set(response)                == ['content', 'content_type', 'headers', 'json', 'status_code', 'text']
         assert list_set(response.get('json'   )) == ['args', 'data', 'files', 'form', 'headers', 'json', 'origin', 'url']

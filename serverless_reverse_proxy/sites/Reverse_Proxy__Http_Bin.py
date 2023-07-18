@@ -18,7 +18,7 @@ class Reverse_Proxy__Http_Bin(Serverless_Reverse_Proxy):
     def request_post(self, path='', post_data=None, headers=None):
         return self.request('POST', path, data=post_data, headers=headers)
 
-    @cache_on_tmp(reload_data=False)                    # todo: add native support for caching
+    #@cache_on_tmp(reload_data=False)                    # todo: add native support for caching
     def request(self, method, path, data=None, headers=None):
         url            = urljoin(self.target_site, path)
         request_kwargs = dict(method  = method ,
