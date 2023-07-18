@@ -1,0 +1,9 @@
+git+https://github.com/owasp-sbot/OSBot-Utils.git
+git+https://github.com/owasp-sbot/OSBot-AWS.git
+python-dotenv
+requests
+boto3
+
+# for dev/qa
+pytest
+coverage
