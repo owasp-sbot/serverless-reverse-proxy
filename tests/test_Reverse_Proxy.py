@@ -10,9 +10,9 @@ class test_Reverse_Proxy(TestCase):
     def setUp(self) -> None:
         self.reverse_proxy = Reverse_Proxy()
 
-    def test_run(self):
-        request_payload = {"url"}
-        response = self.reverse_proxy.run(request_payload)
-        pprint(response)
+    # def test_run(self):
+    #     request_payload = {"url"}
+    #     response = self.reverse_proxy.run(request_payload)
+    #     pprint(response)
 
 

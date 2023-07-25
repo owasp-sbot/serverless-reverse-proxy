@@ -4,6 +4,6 @@ class Step_1__Request__Receive:
         self.reverse_proxy   = reverse_proxy
         self.request_payload = None
 
-    def run(self, request_payload):
-        self.request_payload = request_payload
+    def run(self, ):
+        #self.request_payload = request_payload
         return self

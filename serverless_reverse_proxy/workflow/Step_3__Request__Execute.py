@@ -1,14 +1,15 @@
 import requests
 
-class Step_3_Request_Execute:
+class Step_3__Request__Execute:
 
     def __init__(self):
-        self.method       = None
-        self.url          = None
-        self.params       = None
-        self.data         = None
-        self.headers      = None
-        self.raw_response = None
+        self.method        = None
+        self.url           = None
+        self.params        = None
+        self.data          = None
+        self.headers       = None
+        self.raw_response  = None
+
 
     def __enter__(self): return self
     def __exit__(self, exc_type, exc_val, exc_tb): return False
