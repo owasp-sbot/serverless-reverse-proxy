@@ -30,4 +30,23 @@ class Step_3_Request_Execute:
         return self.response()
 
     def response(self):
-        return self.raw_response
+        if self.raw_response is None:
+            return {}
+
+        status_code    = self.raw_response.status_code
+        headers        = dict(self.raw_response.headers)
+        content_type   = headers.get('Content-Type')
+        text           = ''
+        json           = None
+        content        = None
+        if content_type.startswith('application/json'):
+            json = self.raw_response.json()
+        else:
+            text = self.raw_response.text
+
+        return dict(content_type = content_type,
+                    status_code  = status_code ,
+                    content      = content     ,
+                    json         = json        ,
+                    text         = text        ,
+                    headers      = headers     )
