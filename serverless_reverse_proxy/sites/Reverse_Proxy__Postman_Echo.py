@@ -13,7 +13,6 @@ class Reverse_Proxy__Postman_Echo(Serverless_Reverse_Proxy):
 
     def __init__(self):
         super().__init__(target_site=TARGET_SITE__POSTMAN_ECHO)
-        self.reverse_proxy = Reverse_Proxy()
 
     def request_get(self, path=''):
         return self.reverse_proxy.run__via__target_site__path('GET', target_site=self.target_site, path=path)
