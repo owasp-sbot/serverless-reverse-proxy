@@ -20,6 +20,7 @@ class Step_3__Request__Execute:
         self.params  = params                           # todo: add validation to check if it is valid url params
         self.data    = data                             # todo: add validation to check if it is valid post data (according to provided headers)
         self.headers = headers                          # todo: add validation to check if it is a dict and has valid headers names & values
+        return self
 
     def run(self):
         kwargs =  dict( method  = self.method  ,
@@ -28,7 +29,7 @@ class Step_3__Request__Execute:
                         data    = self.data    ,
                         headers = self.headers )
         self.raw_response = requests.request(**kwargs)
-        return self.response()
+        return self
 
     def response(self):
         if self.raw_response is None:
