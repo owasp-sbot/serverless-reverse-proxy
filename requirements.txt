@@ -7,3 +7,4 @@ boto3
 # for dev/qa
 pytest
 coverage
+beautifulsoup4
