@@ -41,7 +41,8 @@ class Step_3__Request__Execute:
         text           = ''
         json           = None
         content        = None
-        if content_type.startswith('application/json'):
+        if content_type and content_type.startswith('application/json'):
+            text = self.raw_response.text
             json = self.raw_response.json()
         else:
             text = self.raw_response.text
